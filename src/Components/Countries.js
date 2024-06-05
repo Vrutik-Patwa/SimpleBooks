@@ -1,0 +1,15 @@
+export const countries = [
+  { key: "us", label: "United States" },
+  { key: "ca", label: "Canada" },
+  { key: "mx", label: "Mexico" },
+  { key: "br", label: "Brazil" },
+  { key: "ar", label: "Argentina" },
+  { key: "uk", label: "United Kingdom" },
+  { key: "fr", label: "France" },
+  { key: "de", label: "Germany" },
+  { key: "jp", label: "Japan" },
+  { key: "cn", label: "China" },
+  { key: "in", label: "India" },
+  { key: "ru", label: "Russia" },
+  { key: "za", label: "South Africa" },
+];

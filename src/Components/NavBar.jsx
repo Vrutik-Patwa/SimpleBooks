@@ -60,13 +60,15 @@ const NavBar = (props) => {
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
+          {/* <NavbarItem className="hidden lg:flex">
             <Link href="/login">Login</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Button color="primary" href="#" variant="flat">
-              Sign Up
-            </Button>
+          </NavbarItem> */}
+          <NavbarItem className="lg:flex">
+            <Link href="/signup">
+              <Button color="primary" href="#" variant="flat">
+                Sign Up
+              </Button>
+            </Link>
           </NavbarItem>
           <NavbarItem>
             {props.mode ? (

@@ -6,7 +6,7 @@ const HomeLayout = () => {
   const [styles, setStyles] = useState(true);
   function changeTheme() {
     setStyles((prevState) => !prevState);
-    console.log(styles);
+    // console.log(styles);
   }
   return (
     <div
