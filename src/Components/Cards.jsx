@@ -1,10 +1,13 @@
 import React from "react";
-import { Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody, Divider, CardHeader } from "@nextui-org/react";
 
 const Cards = () => {
   return (
-    <Card className="w-[280px] h-[280px]">
-      <CardBody>Hello</CardBody>
+    <Card className="w-[280px] h-[280px] shadow-2xl ">
+      <CardHeader>Hello</CardHeader>
+      <Divider />
+
+      <CardBody></CardBody>
     </Card>
   );
 };

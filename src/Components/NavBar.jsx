@@ -1,4 +1,6 @@
 import React from "react";
+import { MdDarkMode } from "react-icons/md";
+import { PiSunLight } from "react-icons/pi";
 import Logo from "./Logo";
 import {
   Navbar,
@@ -12,8 +14,9 @@ import {
   Button,
   Divider,
 } from "@nextui-org/react";
+import { TbSun } from "react-icons/tb";
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <div>
       <Navbar className="h-18">
@@ -58,12 +61,19 @@ const NavBar = () => {
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
+            <Link href="/login">Login</Link>
           </NavbarItem>
           <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
+            <Button color="primary" href="#" variant="flat">
               Sign Up
             </Button>
+          </NavbarItem>
+          <NavbarItem>
+            {props.mode ? (
+              <MdDarkMode className="size-6" onClick={props.theme} />
+            ) : (
+              <PiSunLight onClick={props.theme} className="size-6" />
+            )}
           </NavbarItem>
         </NavbarContent>
       </Navbar>

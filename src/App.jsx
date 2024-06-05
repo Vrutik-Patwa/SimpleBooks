@@ -1,12 +1,15 @@
-import Content from "./Components/Content";
-import NavBar from "./Components/NavBar";
-
+// import HomeLayout from "./pages/Home";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="flex flex-col h-screen">
-      <NavBar />
-      <Content />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

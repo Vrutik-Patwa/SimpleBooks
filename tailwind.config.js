@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        back: "#010104",
+        back: "#262626",
       },
     },
   },

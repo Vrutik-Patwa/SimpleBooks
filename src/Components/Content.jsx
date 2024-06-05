@@ -3,12 +3,12 @@ import Cards from "./Cards";
 
 const Content = () => {
   return (
-    <div className="bg-back flex-1 flex flex-col mt-10 ml-36 gap-20">
-      <div className="flex gap-20">
+    <div className="bg-background flex-1 flex flex-col mt-6 ml-36 gap-10">
+      <div className="flex gap-16">
         <Cards />
         <Cards />
       </div>
-      <div className="flex gap-20">
+      <div className="flex gap-16">
         <Cards />
         <Cards />
       </div>
