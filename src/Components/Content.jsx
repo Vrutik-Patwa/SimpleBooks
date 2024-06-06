@@ -14,8 +14,8 @@ const Content = () => {
     );
   });
   return (
-    <div className="flex flex-1 mt-4">
-      <div className="">
+    <div className="flex flex-1 ">
+      <div className="mt-5">
         <div className="bg-background flex flex-row flex-wrap w-[800px] mt-6 ml-10 gap-10 items-center justify-center">
           {CardElements}
         </div>
