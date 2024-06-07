@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { loginSchema } from "../schemas/login";
 import {
   Card,
@@ -22,7 +22,7 @@ import { SocialIcon } from "react-social-icons";
 import { useFormik } from "formik";
 // import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
 const Login = () => {
-  const { values, handleBlur, handleChange } = useFormik({
+  const { values, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",
       password: "",
@@ -31,8 +31,10 @@ const Login = () => {
       terms: false,
     },
     validationSchema: loginSchema,
+    onSubmit,
   });
   const [isVisible, setIsVisible] = React.useState(false);
+  // const [email, setEmail] = useState(values.email);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (
@@ -42,7 +44,10 @@ const Login = () => {
           <h1 className="font-bold text-xl">Try SimpleBooks For Free</h1>
         </CardHeader>
         <CardBody className="gap-2">
-          <form className="flex flex-col items-center gap-4">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col items-center gap-4"
+          >
             <Input
               type="email"
               label="Email"
@@ -51,15 +56,15 @@ const Login = () => {
               // The form needs an email id
               variant="underlined"
               placeholder="Enter your email"
-              isClearable
+              isClearable={true}
               className="w-[90%]"
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
               endContent={
-                <div>
+                <button>
                   <MailIcon className="text-2xl text-default-400 pointer-events-none " />
-                </div>
+                </button>
               }
             />
             <Input
