@@ -21,6 +21,9 @@ import { FcGoogle } from "react-icons/fc";
 import { SocialIcon } from "react-social-icons";
 import { useFormik } from "formik";
 // import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
+const onSubmit = () => {
+  console.log("submitted");
+};
 const Login = () => {
   const { values, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
