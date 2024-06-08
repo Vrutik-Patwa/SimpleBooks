@@ -21,11 +21,22 @@ import { FcGoogle } from "react-icons/fc";
 import { SocialIcon } from "react-social-icons";
 import { useFormik } from "formik";
 // import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
-const onSubmit = () => {
+const onSubmit = async (values, actions) => {
+  console.log(values);
   console.log("submitted");
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
+  actions.resetForm();
 };
 const Login = () => {
-  const { values, handleBlur, handleChange, handleSubmit } = useFormik({
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
     initialValues: {
       email: "",
       password: "",
@@ -38,10 +49,10 @@ const Login = () => {
   });
   const [isVisible, setIsVisible] = React.useState(false);
   // const [email, setEmail] = useState(values.email);
-
+  // console.log(errors);
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (
-    <div className="bg-background min-w-[400px] ml-16 h-[80%] text-foreground self-center mb-10">
+    <div className="bg-background min-w-[400px] ml-16 min-h-[82%] text-foreground self-center mb-10">
       <Card className="h-full">
         <CardHeader className="flex flex-col items-center mt-2 ">
           <h1 className="font-bold text-xl">Try SimpleBooks For Free</h1>
@@ -49,6 +60,7 @@ const Login = () => {
         <CardBody className="gap-2">
           <form
             onSubmit={handleSubmit}
+            autoComplete="off"
             className="flex flex-col items-center gap-4"
           >
             <Input
@@ -60,7 +72,7 @@ const Login = () => {
               variant="underlined"
               placeholder="Enter your email"
               isClearable={true}
-              className="w-[90%]"
+              className={errors.email ? "w-[90%]" : "w-[90%] "}
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -70,6 +82,11 @@ const Login = () => {
                 </button>
               }
             />
+            {errors.email && touched.email && (
+              <p className="bg-red text-red-700 text-sm mt-[-12px] mb-[-16px] self-start ml-5">
+                {errors.email}
+              </p>
+            )}
             <Input
               isRequired
               label="Password"
@@ -95,6 +112,11 @@ const Login = () => {
               }
               type={isVisible ? "text" : "password"}
             />
+            {errors.password && touched.password && (
+              <p className="bg-red text-red-700 text-sm mt-[-12px] mb-[-16px] self-start ml-5">
+                {errors.password}
+              </p>
+            )}
             <Input
               isRequired
               type="number"
@@ -108,11 +130,17 @@ const Login = () => {
               onChange={handleChange}
               onBlur={handleBlur}
             />
+            {errors.number && touched.number && (
+              <p className="bg-red text-red-700 text-sm mt-[-12px] mb-[-10px] self-start ml-5">
+                {errors.number}
+              </p>
+            )}
+
             <Select
               label="Country"
               placeholder="Select an Country"
               className="w-[90%]"
-              id="country"
+              name="country"
               value={values.country}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -121,24 +149,38 @@ const Login = () => {
                 <SelectItem key={country.key}>{country.label}</SelectItem>
               ))}
             </Select>
+            {errors.country && touched.country && (
+              <p className="bg-red text-red-700 text-sm mt-[-12px] mb-[-12px] self-start ml-5">
+                {errors.country}
+              </p>
+            )}
             <Checkbox
               className="mr-4"
-              id="terms"
+              name="terms"
               value={values.terms}
               onChange={handleChange}
               onBlur={handleBlur}
             >
               I agree to terms of services and policies
             </Checkbox>
+            {errors.terms && touched.terms && (
+              <p className="bg-red text-red-700 text-sm mt-[-12px] mb-[-10px] self-start ml-5">
+                {errors.terms}
+              </p>
+            )}
             <Button
-              className="w-[90%] h-12 font-semibold text-xl"
+              className={`w-[90%] h-12 font-semibold text-xl ${
+                isSubmitting ? "opacity-0" : ""
+              }`}
               color="primary"
               type="submit"
+              // disabled={isSubmitting}
             >
               Start a free trial
             </Button>
+            {/* {console.log(isSubmitting)} */}
           </form>
-          <Divider />
+          <Divider className="mt-2" />
         </CardBody>
         <CardFooter className="flex h-[15%] items-center">
           <div className="flex h-full items-center mb-4 gap-6 w-full justify-center">
@@ -156,3 +198,5 @@ const Login = () => {
 };
 
 export default Login;
+
+// Not Responsive design make it responsive
