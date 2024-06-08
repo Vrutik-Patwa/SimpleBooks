@@ -64,9 +64,9 @@ const NavBar = (props) => {
             <Link href="/login">Login</Link>
           </NavbarItem> */}
           <NavbarItem className="lg:flex">
-            <Link href="/signup">
+            <Link href="/signin">
               <Button color="primary" href="#" variant="flat">
-                Sign Up
+                Sign In
               </Button>
             </Link>
           </NavbarItem>

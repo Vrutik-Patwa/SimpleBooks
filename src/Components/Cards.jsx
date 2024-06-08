@@ -44,8 +44,8 @@ const Cards = (props) => {
             </CardBody>
             <Divider className="w-full" />
             <CardFooter className="w-full flex justify-center">
-              <Link className="font-bold" href="signup">
-                Sign Up now
+              <Link className="font-bold" href="/signin">
+                Sign In now
                 <FaExternalLinkAlt className="ml-2" />
               </Link>
             </CardFooter>
