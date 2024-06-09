@@ -1,7 +1,7 @@
 import React from "react";
 import { MdDarkMode } from "react-icons/md";
 import { PiSunLight } from "react-icons/pi";
-import Logo from "./Logo";
+// import Logo from "./Logo";
 import {
   Navbar,
   NavbarBrand,
@@ -25,7 +25,9 @@ const NavBar = (props) => {
           {/* <div>
             <img src="public\images\image-removebg-preview (2).png" alt="" />
           </div> */}
-          <p className="font-bold text-inherit">SimpleBooks</p>
+          <Link className="" href="/">
+            <p className="font-bold text-inherit">SimpleBooks</p>
+          </Link>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem>
