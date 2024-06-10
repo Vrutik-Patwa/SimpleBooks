@@ -46,7 +46,7 @@ const NavBar = (props) => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/invoicing">
               Invoices
             </Link>
           </NavbarItem>
