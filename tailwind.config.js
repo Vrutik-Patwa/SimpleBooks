@@ -11,6 +11,8 @@ export default {
       colors: {
         back: "#262626",
         button: "rgb(167, 139, 250, 1)",
+        sidebar: "#1F213A",
+        bg_invoice: "#141625",
       },
     },
   },

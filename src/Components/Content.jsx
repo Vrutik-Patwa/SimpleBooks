@@ -8,7 +8,6 @@ const Content = () => {
   const CardElements = CardData.map((card) => {
     return (
       <div key={nanoid()}>
-        {" "}
         <Cards prop={card} />
       </div>
     );

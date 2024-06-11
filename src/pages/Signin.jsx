@@ -102,7 +102,7 @@ const Signin = () => {
                 <div class="line"></div>
               </div>
               <div className="flex justify-center">
-                <button aria-label="Log in with Google" className="p-3 ">
+                <button aria-label="Log in with Google" className="p-3  ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 32 32"
