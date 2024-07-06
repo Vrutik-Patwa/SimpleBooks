@@ -10,12 +10,12 @@ const Invoicing = () => {
   }
   return (
     <div
-      className={`flex h-screen w-screen text-foreground ${
+      className={`flex flex-row w-screen text-foreground ${
         styles ? "bg-bg_invoice" : "bg-slate-100"
       }`}
     >
       <SideBar theme={changeTheme} mode={styles} />
-      <div className="justify-center flex flex-1">
+      <div className="justify-center flex flex-auto">
         <Content_Invoice />
       </div>
       {/* <NavBar theme={changeTheme} mode={styles} /> */}

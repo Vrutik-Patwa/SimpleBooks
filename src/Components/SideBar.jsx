@@ -6,7 +6,7 @@ import { MdDarkMode } from "react-icons/md";
 import { PiSunLight } from "react-icons/pi";
 const SideBar = (props) => {
   return (
-    <div className="h-screen bg-sidebar w-24 flex flex-col items-center rounded-e-3xl text-white">
+    <div className="h-screen bg-sidebar w-24 flex flex-col items-center rounded-e-3xl text-white fixed">
       <PieChart />
       <div className="mt-auto mb-5 w-full flex flex-col items-center justify-center">
         {props.mode ? (
