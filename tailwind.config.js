@@ -13,6 +13,7 @@ export default {
         button: "rgb(167, 139, 250, 1)",
         sidebar: "#1F213A",
         bg_invoice: "#141625",
+        invoice: "#1F213A",
       },
     },
   },
