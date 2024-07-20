@@ -19,6 +19,10 @@ export default {
         arrow: "#6557B7",
         hashtag: "#767DA8",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        spaceGrotesk: ["Space Grotesk", "sans-serif"],
+      },
     },
   },
   darkMode: "class",

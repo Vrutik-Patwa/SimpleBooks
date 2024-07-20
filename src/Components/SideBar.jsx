@@ -1,29 +1,101 @@
-import React from "react";
-import PieChart from "../UI/PieChart";
-import User from "../UI/User";
-import { Divider } from "@nextui-org/react";
-import { MdDarkMode } from "react-icons/md";
-import { PiSunLight } from "react-icons/pi";
-const SideBar = (props) => {
+import React, { useEffect, useState } from "react";
+import {
+  easeInOut,
+  motion,
+  useAnimation,
+  useAnimationControls,
+} from "framer-motion";
+import SideBarLink from "./SideBarLink";
+import { Dashboard } from "@mui/icons-material";
+
+const ContainerVariants = {
+  close: {
+    width: "4.5rem",
+    transition: {
+      type: "spring",
+      damping: 15,
+      duration: 0.5,
+    },
+  },
+  open: {
+    width: "16rem",
+    transition: {
+      type: "spring",
+      damping: 15,
+      duration: 0.5,
+    },
+  },
+};
+
+const svgVariants = {
+  open: {
+    rotate: 180,
+  },
+  close: {
+    rotate: 360,
+  },
+};
+
+const SideBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const ContainerControls = useAnimationControls();
+  const svgControls = useAnimationControls();
+  const handleOpenClose = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      ContainerControls.start("open");
+      svgControls.start("open");
+    } else {
+      ContainerControls.start("close");
+      svgControls.start("close");
+    }
+  }, [isOpen]);
+
   return (
-    <div className="h-screen bg-sidebar w-24 flex flex-col items-center rounded-e-3xl text-white fixed">
-      <PieChart />
-      <div className="mt-auto mb-5 w-full flex flex-col items-center justify-center">
-        {props.mode ? (
-          <MdDarkMode
-            className="size-6 text-white mb-3"
-            onClick={props.theme}
-          />
-        ) : (
-          <PiSunLight
-            onClick={props.theme}
-            className="size-6 text-white mb-3"
-          />
-        )}
-        <Divider className="mb-3" />
-        <User />
+    <motion.nav
+      variants={ContainerVariants}
+      initial="close"
+      animate={ContainerControls}
+      className="absolute top-0 left-0 z-10 flex flex-col h-full gap-20 p-5 shadow shadow-neutral-500 bg-neutral-900"
+    >
+      <div className="flex flex-row w-full justify-between place-items-center">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-700"></div>
+        <button
+          className="p-1 rounded-full flex"
+          onClick={() => handleOpenClose()}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1}
+            stroke="currentColor"
+            className="size-6 stroke-neutral-200"
+          >
+            <motion.path
+              variants={svgVariants}
+              animate={svgControls}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              transition={{
+                duration: 0.5,
+                ease: easeInOut,
+              }}
+            />
+          </svg>
+        </button>
       </div>
-    </div>
+      <div className="flex flex-col gap-3">
+        <SideBarLink name="Dashboard">
+          <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8" />
+        </SideBarLink>
+      </div>
+    </motion.nav>
   );
 };
 
