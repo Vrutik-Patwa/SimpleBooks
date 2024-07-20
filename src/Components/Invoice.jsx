@@ -6,7 +6,9 @@ const Invoice = () => {
     <Card className="bg-invoice ">
       <CardBody className="h-[68px] border-none flex flex-row items-center text-white justify-around">
         {/* id */}
-        <div className="text-medium">#RT3080</div>
+        <div className="text-medium">
+          <span className="text-hashtag">#</span>RT3080
+        </div>
         {/* Date */}
         <div>Due 19 Aug 2021</div>
         {/* Name */}
@@ -14,8 +16,8 @@ const Invoice = () => {
         {/* Currency */}
         <div>1800</div>
         {/* Status */}
-        <div className="bg-status_paid py-2 px-10 rounded-md text-status_text_paid flex flex-row font-bold items-center gap-2">
-          <div className="items-center flex flex-1 justify-center">
+        <div className="flex flex-row items-center gap-2 px-10 py-2 font-bold rounded-md bg-status_paid text-status_text_paid">
+          <div className="flex items-center justify-center flex-1">
             <FaCircle size={"9px"} />
           </div>
           <div>Paid</div>

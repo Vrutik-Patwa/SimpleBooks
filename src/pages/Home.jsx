@@ -10,7 +10,7 @@ const HomeLayout = () => {
   }
   return (
     <div
-      className={`flex flex-col h-screen bg-background text-foreground ${
+      className={`flex flex-col flex-wrap min-h-screen w-auto bg-background text-foreground ${
         styles ? "dark" : ""
       }`}
     >

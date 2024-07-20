@@ -17,6 +17,7 @@ export default {
         status_paid: "#1F2C3F",
         status_text_paid: "#1FFD9F",
         arrow: "#6557B7",
+        hashtag: "#767DA8",
       },
     },
   },

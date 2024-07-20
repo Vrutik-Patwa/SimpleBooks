@@ -1,4 +1,5 @@
 // import HomeLayout from "./pages/Home";
+import Customers from "./pages/Customers";
 import Home from "./pages/Home";
 import Invoicing from "./pages/Invoicing";
 
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/invoicing" element={<Invoicing />} />
+        <Route path="/customers" element={<Customers />} />
       </Routes>
     </BrowserRouter>
   );
