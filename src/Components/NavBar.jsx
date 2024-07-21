@@ -36,7 +36,7 @@ const NavBar = (props) => {
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="#" aria-current="page">
+            <Link href="/customers" aria-current="page">
               Customers
             </Link>
           </NavbarItem>

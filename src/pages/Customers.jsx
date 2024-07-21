@@ -2,9 +2,9 @@ import React from "react";
 import SideBar from "../Components/SideBar";
 const Customers = () => {
   return (
-    <div className="h-screen bg-background text-foreground dark">
+    <main className="h-screen bg-background text-foreground dark w-full relative">
       <SideBar />
-    </div>
+    </main>
   );
 };
 

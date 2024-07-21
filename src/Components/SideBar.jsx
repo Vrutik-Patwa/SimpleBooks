@@ -6,7 +6,14 @@ import {
   useAnimationControls,
 } from "framer-motion";
 import SideBarLink from "./SideBarLink";
-import { Dashboard } from "@mui/icons-material";
+// import { Dashboard } from "@mui/icons-material";
+import {
+  ChartBarIcon,
+  DocumentCheckIcon,
+  Square2StackIcon,
+  ChartPieIcon,
+  UsersIcon,
+} from "@heroicons/react/16/solid";
 
 const ContainerVariants = {
   close: {
@@ -38,6 +45,7 @@ const svgVariants = {
 
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const ContainerControls = useAnimationControls();
   const svgControls = useAnimationControls();
@@ -60,7 +68,7 @@ const SideBar = () => {
       variants={ContainerVariants}
       initial="close"
       animate={ContainerControls}
-      className="absolute top-0 left-0 z-10 flex flex-col h-full gap-20 p-5 shadow shadow-neutral-500 bg-neutral-900"
+      className="absolute top-0 left-0 z-10 flex flex-col h-full gap-20 p-5 shadow shadow-neutral-600 bg-neutral-900"
     >
       <div className="flex flex-row w-full justify-between place-items-center">
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-700"></div>
@@ -74,7 +82,7 @@ const SideBar = () => {
             viewBox="0 0 24 24"
             strokeWidth={1}
             stroke="currentColor"
-            className="size-6 stroke-neutral-200"
+            className="w-8 h-8 stroke-neutral-200"
           >
             <motion.path
               variants={svgVariants}
@@ -84,7 +92,7 @@ const SideBar = () => {
               d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
               transition={{
                 duration: 0.5,
-                ease: easeInOut,
+                ease: "easeInOut",
               }}
             />
           </svg>
@@ -92,7 +100,19 @@ const SideBar = () => {
       </div>
       <div className="flex flex-col gap-3">
         <SideBarLink name="Dashboard">
-          <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8" />
+          <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900  " />
+        </SideBarLink>
+        <SideBarLink name="Projects">
+          <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900" />
+        </SideBarLink>
+        <SideBarLink name="Tasks">
+          <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900" />
+        </SideBarLink>
+        <SideBarLink name="Reporting">
+          <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900 " />
+        </SideBarLink>
+        <SideBarLink name="Users">
+          <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900" />
         </SideBarLink>
       </div>
     </motion.nav>
