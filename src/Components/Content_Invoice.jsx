@@ -8,6 +8,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/react";
+import Invoice from "./Invoice";
 import { ChevronDownIcon } from "../Icons/ChevronDownIcon";
 import { PlusIcon } from "@heroicons/react/16/solid";
 const Content_Invoice = () => {
@@ -24,8 +25,8 @@ const Content_Invoice = () => {
       <h1 className="text-2xl font-bold font-spaceGrotesk text-invoicing-light-text_head">
         Invoice
       </h1>
-      <div className="flex ">
-        <div className="bg-white w-full h-fit p-3 px-5 drop-shadow-sm flex justify-between  items-center">
+      <div className="flex flex-col gap-[1.2px] ">
+        <div className="bg-white w-full h-fit p-3 px-5 drop-shadow-sm flex justify-between  items-center gap-[1px]">
           <h1 className=" tracking-normal font-semibold">All Invoices</h1>
           <div className="flex flex-row justify-center items-center gap-20 font-semibold">
             <ButtonGroup
@@ -67,6 +68,12 @@ const Content_Invoice = () => {
             </Button>
           </div>
         </div>
+        <Invoice />
+        <Invoice />
+        <Invoice />
+        <Invoice />
+        <Invoice />
+        <Invoice />
       </div>
     </div>
   );
