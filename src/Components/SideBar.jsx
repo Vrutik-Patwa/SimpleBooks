@@ -10,6 +10,7 @@ import {
   Square2StackIcon,
   ChartPieIcon,
   UsersIcon,
+  HomeIcon,
 } from "@heroicons/react/16/solid";
 import { Divider } from "@nextui-org/react";
 
@@ -23,7 +24,7 @@ const ContainerVariants = {
     },
   },
   open: {
-    width: "16rem",
+    width: "13rem",
     transition: {
       type: "spring",
       damping: 15,
@@ -61,24 +62,34 @@ const SideBar = () => {
     }
   }, [isOpen]);
 
+  const [icon, setIcon] = useState("");
+
+  const handleIcon = (icon) => {
+    setIcon(icon);
+  };
+
   return (
     <motion.nav
       variants={ContainerVariants}
       initial="close"
       animate={ContainerControls}
-      className="fixed top-0 left-0 z-10 flex flex-col h-full gap-20 p-5 shadow shadow-neutral-600 "
+      className="sticky top-0 left-0 z-10 flex flex-col h-full gap-20 p-5 shadow shadow-neutral-600 bg-sidebar-light-bg "
       onHoverStart={handleOpenClose}
       onHoverEnd={handleOpenClose}
     >
       <div className="flex flex-row w-full justify-between place-items-center ">
         {/* <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-700"></div> */}
-        <div className="flex w-full place-items-center gap-3 ml-1 mt-2">
+        {/* <div className="flex w-full place-items-center gap-3 ml-1 mt-2">
           <User />
           <p className="overflow-hidden whitespace-nowrap text-white">
             Anthony Jacobs
           </p>
+        </div> */}
+        <div className=" w-full flex flex-row justify-center gap-2 place-items-center whitespace-nowrap ">
+          <img src="src\assets\logo.png" alt="logo" className="size-10" />
+          {/* <p className="overflow-hidden text-white">SimpleBooks</p> */}
         </div>
-        <Divider className=" absolute left-0  mt-20  w-[85%] ml-2 " />
+        {/* <Divider className=" absolute left-0  mt-20  w-[85%] ml-2 bg-background " /> */}
         {/* <button
           className="p-1 rounded-full flex"
           onClick={() => handleOpenClose()}
@@ -105,21 +116,24 @@ const SideBar = () => {
           </svg>
         </button> */}
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
+        <SideBarLink name="Home" page="\">
+          <HomeIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent  " />
+        </SideBarLink>
         <SideBarLink name="Dashboard" page="\dashboard">
-          <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900  " />
+          <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent  " />
         </SideBarLink>
         <SideBarLink name="Invoices" page="\invoicing">
-          <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900" />
+          <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent" />
         </SideBarLink>
         <SideBarLink name="Inventory" page="\inventory">
-          <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900" />
+          <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent" />
         </SideBarLink>
         <SideBarLink name="Suppliers" page="\suppliers">
-          <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900 " />
+          <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent " />
         </SideBarLink>
         <SideBarLink name="Customers" page="\customers">
-          <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8  text-neutral-900" />
+          <UsersIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent" />
         </SideBarLink>
       </div>
     </motion.nav>

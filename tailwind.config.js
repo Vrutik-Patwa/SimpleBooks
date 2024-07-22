@@ -12,12 +12,23 @@ export default {
         back: "#262626",
         button: "rgb(167, 139, 250, 1)",
         sidebar: "#2E2E38",
-        bg_invoice: "#141625",
         invoice: "#020024",
         status_paid: "#9e9e9e",
         status_text_paid: "#1FFD9F",
         arrow: "#6557B7",
         hashtag: "#767DA8",
+        invoicing: {
+          light: {
+            bg: "#F3F7F9",
+            text_head: "#223345",
+          },
+        },
+        sidebar: {
+          light: {
+            bg: "#132c5b",
+            select: "#0F2E69",
+          },
+        },
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

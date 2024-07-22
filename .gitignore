@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+src/pages/Invoicing_old.jsx
+
+src/Components/Invoice_old.jsx
+src/Components/content_invoice_old.jsx
