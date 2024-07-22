@@ -10,11 +10,9 @@ const Invoicing = () => {
   }
   return (
     <div
-      className={`flex flex-row  text-foreground ${
-        styles ? "bg-bg_invoice" : "bg-slate-100"
-      }`}
+      className="flex flex-row  text-foreground dark bg-background"
     >
-      <SideBar theme={changeTheme} mode={styles} />
+      <SideBar />
       <div
         className={`flex justify-center flex-auto ${
           styles ? "text-white" : "text-black"

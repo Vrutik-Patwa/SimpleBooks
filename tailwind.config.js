@@ -11,10 +11,10 @@ export default {
       colors: {
         back: "#262626",
         button: "rgb(167, 139, 250, 1)",
-        sidebar: "#1F213A",
+        sidebar: "#2E2E38",
         bg_invoice: "#141625",
-        invoice: "#1F213A",
-        status_paid: "#1F2C3F",
+        invoice: "#020024",
+        status_paid: "#9e9e9e",
         status_text_paid: "#1FFD9F",
         arrow: "#6557B7",
         hashtag: "#767DA8",

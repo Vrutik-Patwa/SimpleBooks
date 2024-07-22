@@ -1,6 +1,7 @@
 import React from "react";
 import { MdDarkMode } from "react-icons/md";
-import { PiSunLight } from "react-icons/pi";
+import { useTheme } from "../context/themeContext";
+import ThemeIcon from "../UI/ThemeIcon";
 // import Logo from "./Logo";
 import {
   Navbar,
@@ -16,7 +17,8 @@ import {
 } from "@nextui-org/react";
 import { TbSun } from "react-icons/tb";
 
-const NavBar = (props) => {
+const NavBar = () => {
+  const { darkMode, changeTheme } = useTheme();
   return (
     <div>
       <Navbar className="h-18">
@@ -73,11 +75,7 @@ const NavBar = (props) => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            {props.mode ? (
-              <MdDarkMode className="size-6" onClick={props.theme} />
-            ) : (
-              <PiSunLight onClick={props.theme} className="size-6" />
-            )}
+            <ThemeIcon />
           </NavbarItem>
         </NavbarContent>
       </Navbar>

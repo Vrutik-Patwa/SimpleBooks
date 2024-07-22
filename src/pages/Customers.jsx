@@ -4,6 +4,7 @@ const Customers = () => {
   return (
     <main className="h-screen bg-background text-foreground dark w-full relative">
       <SideBar />
+      
     </main>
   );
 };
