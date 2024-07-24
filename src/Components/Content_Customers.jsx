@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Customer from "./Customer";
 import {
   Button,
   ButtonGroup,
@@ -43,25 +44,27 @@ const Content_Invoice = () => {
       </h1>
       <div className="flex flex-col gap-[2px] overflow-scroll">
         <div className="bg-white w-full h-fit p-3 px-5 drop-shadow-sm flex justify-between  items-center gap-[1px] ">
-          <h1 className=" tracking-normal font-semibold">Name</h1>
-          <h1 className=" tracking-normal font-semibold">Company Name</h1>
+          <h1 className=" tracking-normal font-semibold flex-1">Name</h1>
+          <h1 className=" tracking-normal font-semibold flex-1">
+            Company Name
+          </h1>
 
-          <h1 className=" tracking-normal font-semibold">Total Purchases</h1>
-          <h1 className=" tracking-normal font-semibold">
+          <h1 className=" tracking-normal font-semibold flex-1">
+            Total Purchases
+          </h1>
+          <h1 className=" tracking-normal font-semibold flex-1">
             Outstanding Balance
           </h1>
-          <h1 className=" tracking-normal font-semibold">Contact No</h1>
+          <h1 className=" tracking-normal font-semibold flex-1">Contact No</h1>
         </div>
         <div className="flex flex-1  flex-col overflow-scroll gap-[2px] ">
-          <Invoice />
-          <Invoice />
-          <Invoice />
-          <Invoice />
-          <Invoice />
-          <Invoice />
-          <Invoice />
-          <Invoice />
-          <Invoice />
+          <Customer />
+          <Customer />
+          <Customer />
+          <Customer />
+          <Customer />
+          <Customer />
+          <Customer />
         </div>
       </div>
     </div>
