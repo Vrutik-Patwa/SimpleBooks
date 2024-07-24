@@ -39,50 +39,18 @@ const Content_Invoice = () => {
         <User />
       </div>
       <h1 className="text-3xl font-bold font-spaceGrotesk text-invoicing-light-text_head">
-        Invoice
+        Customers
       </h1>
-      <div className="flex flex-col gap-[1.2px] overflow-scroll">
+      <div className="flex flex-col gap-[2px] overflow-scroll">
         <div className="bg-white w-full h-fit p-3 px-5 drop-shadow-sm flex justify-between  items-center gap-[1px] ">
-          <h1 className=" tracking-normal font-semibold">All Invoices</h1>
-          <div className="flex flex-row justify-center items-center gap-20 font-semibold">
-            <ButtonGroup
-              variant="solid"
-              color="primary"
-              className="gap-[0.5px]"
-            >
-              <Button>{labelsMap[selectedOptionValue]}</Button>
-              <Dropdown placement="bottom-end">
-                <DropdownTrigger>
-                  <Button isIconOnly>
-                    <ChevronDownIcon />
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu
-                  disallowEmptySelection
-                  aria-label="Merge options"
-                  selectedKeys={selectedOption}
-                  selectionMode="single"
-                  onSelectionChange={setSelectedOption}
-                  className="max-w-[300px]"
-                >
-                  <DropdownItem key="status">
-                    {labelsMap["status"]}
-                  </DropdownItem>
-                  <DropdownItem key="time">{labelsMap["time"]}</DropdownItem>
-                  <DropdownItem key="amount">
-                    {labelsMap["amount"]}
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </ButtonGroup>
-            <Button color="secondary" className="rounded-md">
-              <PlusIcon
-                className="
-          size-5 bg-white text-blue-900 rounded-full "
-              />
-              New
-            </Button>
-          </div>
+          <h1 className=" tracking-normal font-semibold">Name</h1>
+          <h1 className=" tracking-normal font-semibold">Company Name</h1>
+
+          <h1 className=" tracking-normal font-semibold">Total Purchases</h1>
+          <h1 className=" tracking-normal font-semibold">
+            Outstanding Balance
+          </h1>
+          <h1 className=" tracking-normal font-semibold">Contact No</h1>
         </div>
         <div className="flex flex-1  flex-col overflow-scroll gap-[2px] ">
           <Invoice />

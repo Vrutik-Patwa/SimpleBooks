@@ -1,5 +1,5 @@
 import React from "react";
-
+import { formatCurrency } from "../utilities/formatCurrency";
 const Invoice = () => {
   return (
     <main className="relative w-full h-fit flex flex-row bg-white py-4 pl-5 pr-10 justify-between">
@@ -10,7 +10,7 @@ const Invoice = () => {
         <span className="font-light">15/06/24</span>
       </section>
       <section className="font-medium flex flex-col items-end">
-        <h1>$2,200</h1>
+        <h1>{formatCurrency(2200)}</h1>
         <span className="font-light">Paid</span>
       </section>
     </main>

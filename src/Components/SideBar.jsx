@@ -13,7 +13,7 @@ import {
   HomeIcon,
 } from "@heroicons/react/16/solid";
 import { Divider } from "@nextui-org/react";
-
+import ThemeIcon from "../UI/ThemeIcon";
 const ContainerVariants = {
   close: {
     width: "5rem",
@@ -45,11 +45,14 @@ const svgVariants = {
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const { darkMode, changeTheme } = useTheme();
+  const { theme } = useTheme();
   const ContainerControls = useAnimationControls();
   const svgControls = useAnimationControls();
-  const handleOpenClose = () => {
-    setIsOpen(!isOpen);
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+  const handleClose = () => {
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -71,11 +74,11 @@ const SideBar = () => {
   return (
     <motion.nav
       variants={ContainerVariants}
-      initial="close"
+      initial="open"
       animate={ContainerControls}
-      className="sticky top-0 left-0 z-10 flex flex-col h-full gap-20 p-5 shadow shadow-neutral-600 bg-sidebar-light-bg "
-      onHoverStart={handleOpenClose}
-      onHoverEnd={handleOpenClose}
+      className={`sticky top-0 left-0 z-10 flex flex-col h-full gap-20 p-5 shadow shadow-neutral-600 bg-sidebar-${theme}-bg`}
+      onHoverStart={handleOpen}
+      onHoverEnd={handleClose}
     >
       <div className="flex flex-row w-full justify-between place-items-center ">
         {/* <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-700"></div> */}
@@ -117,13 +120,13 @@ const SideBar = () => {
         </button> */}
       </div>
       <div className="flex flex-col gap-4">
-        <SideBarLink name="Home" page="\">
+        <SideBarLink name="Home" page="/">
           <HomeIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent  " />
         </SideBarLink>
         <SideBarLink name="Dashboard" page="\dashboard">
           <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent  " />
         </SideBarLink>
-        <SideBarLink name="Invoices" page="\invoicing">
+        <SideBarLink name="Invoices" page="/invoicing">
           <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent" />
         </SideBarLink>
         <SideBarLink name="Inventory" page="\inventory">
@@ -132,9 +135,12 @@ const SideBar = () => {
         <SideBarLink name="Suppliers" page="\suppliers">
           <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent " />
         </SideBarLink>
-        <SideBarLink name="Customers" page="\customers">
+        <SideBarLink name="Customers" page="/customers">
           <UsersIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6  text-transparent" />
         </SideBarLink>
+        <div className="absolute bottom-0 mb-10 text-{theme}">
+          <ThemeIcon />
+        </div>
       </div>
     </motion.nav>
   );

@@ -16,9 +16,10 @@ import {
   Divider,
 } from "@nextui-org/react";
 import { TbSun } from "react-icons/tb";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-  const { darkMode, changeTheme } = useTheme();
+  // const { darkMode, changeTheme } = useTheme();
   return (
     <div>
       <Navbar className="h-18">
@@ -48,9 +49,9 @@ const NavBar = () => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/invoicing">
+            <NavLink color="foreground" to="/invoicing">
               Invoices
-            </Link>
+            </NavLink>
           </NavbarItem>
           <NavbarItem>
             <Link color="foreground" href="#">

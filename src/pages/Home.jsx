@@ -9,12 +9,10 @@ const HomeLayout = () => {
   //   setStyles((prevState) => !prevState);
   //   // console.log(styles);
   // }
-  const { darkMode } = useTheme();
+  const { theme } = useTheme();
   return (
     <div
-      className={`flex flex-col flex-wrap min-h-screen w-auto bg-background text-foreground ${
-        darkMode ? "dark" : ""
-      }`}
+      className={`flex flex-col flex-wrap min-h-screen w-auto bg-background text-foreground ${theme}`}
     >
       <NavBar />
       <Content />

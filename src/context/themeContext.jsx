@@ -7,14 +7,14 @@ export function useTheme() {
 }
 
 export function ThemeProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
   const changeTheme = () => {
-    setDarkMode(!darkMode);
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   return (
-    <themeContext.Provider value={{ changeTheme, darkMode, setDarkMode }}>
+    <themeContext.Provider value={{ changeTheme, theme, setTheme }}>
       {children}
     </themeContext.Provider>
   );

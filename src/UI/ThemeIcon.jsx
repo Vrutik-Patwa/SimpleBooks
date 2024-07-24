@@ -4,8 +4,8 @@ import { MdDarkMode } from "react-icons/md";
 import { PiSunLight } from "react-icons/pi";
 
 const ThemeIcon = () => {
-  const { darkMode, changeTheme } = useTheme();
-  return darkMode ? (
+  const { theme, changeTheme } = useTheme();
+  return theme == "dark" ? (
     <MdDarkMode className="size-6" onClick={changeTheme} />
   ) : (
     <PiSunLight onClick={changeTheme} className="size-6" />
